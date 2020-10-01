@@ -8,8 +8,8 @@ values = ["6558.07", "468.95", "0.487526", "762.84", "8.86", "85.26", "0.151268"
  hash = Hash[keys.zip(values).to_f]
 
 
-#Les devises dont le cours est inférieur à 6000
-#La devise la plus chère parmi celles dont le cours est inférieur à 6000.
+
+.
 
 
 #La ou les crypto qui ont la plus grosse valeur. OK
@@ -17,3 +17,9 @@ puts hash.max_by{|k,v| v}
 
 #La ou les crypto qui ont la plus petite valeur. OK
 puts hash.min_by{|k,v| v.to_f}
+
+#Les devises dont le cours est inférieur à 6000
+puts "Les monnaies dont la valeur est unférieur à 6000 " + hash.select{|k,v| v < 6000}.keys.to_s
+
+#La devise la plus chère parmi celles dont le cours est inférieur à 6000
+puts "La monnaie la plus chère inférieur à 6000 est " + hash.sort_by{|k,v| v}.reverse.reject{|k,v| v >= 6000}.to_h.keys[0].to_s + " et sa valeur est " + hash.sort_by{|k,v| v}.reverse.reject{|k,v| v >= 6000}.to_h.values[0].to_s + "."

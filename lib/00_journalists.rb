@@ -35,6 +35,7 @@ puts "
                 |                                                      |
                 | 8)Choisie la taille de handle de ton choix           |
                 |                                                      |
+                | 0) Pour fermer le programme                          |
                 |                                                      |
                 ********************************************************
                 "
@@ -42,7 +43,8 @@ print "Choisie un numero:> "
 choice = gets.chomp
 
 def handle_length(mono)
-    print "Taille du ou des handle que tu souhaites voir: "
+    puts ""
+    print "Longueur du ou des handle que tu souhaites voir: "
     taille = gets.chomp.to_i
     puts "les Handle choisie sont:"
     mono.each do |item|
@@ -53,8 +55,6 @@ def handle_length(mono)
 end
 
 while choice != 0
-    count_down = 100
-    count_down -= 1
 
     case choice.to_i
         when 1
@@ -96,10 +96,6 @@ while choice != 0
             system("00_journalists.rb")
         end
         
-    end
-    if count_down - 1 
-        
-        system("00_journalists.rb")
     end
 end
 
